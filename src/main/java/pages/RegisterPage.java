@@ -9,7 +9,7 @@ public class RegisterPage {
 
     private static RegisterPage registerPage = null;
     private RegisterPage(String pageTitle) {
-        System.out.println("RegisterPage is Instantiated...");
+        System.out.println("Navigating to RegisterPage...");
         Assert.assertEquals(BaseClass.getPageTitle(),pageTitle);
     }
     public static RegisterPage getInstance(String pageTitle) {

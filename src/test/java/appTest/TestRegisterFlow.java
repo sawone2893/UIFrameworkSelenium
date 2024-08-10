@@ -12,6 +12,7 @@ public class TestRegisterFlow extends BaseTest{
 	public void test() {
 		PageInstanceFactory
 					.goToHomePage(PageTitles.HOME_PAGE_TITLE)
+					.verifyHomePageLinksDisplayed("Register")
 					.clickHomePageLink("Register");
 		PageInstanceFactory
 					.goToRegisterPage(PageTitles.REGISTER_PAGE_TITLE)

@@ -35,4 +35,9 @@ public class BaseClass {
     public static String getPageTitle(){
         return globalDriver.getPageTitle();
     }
+    
+    public static boolean verifyVisibility(String locatorType,String locator) {
+    	return globalDriver.isElementPresent(locatorType, locator);
+    	
+    }
 }
