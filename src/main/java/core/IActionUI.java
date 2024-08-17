@@ -1,29 +1,71 @@
 package core;
 
-import org.openqa.selenium.WebElement;
-
 import java.util.List;
 
-public interface IActionUI {
-    public void initializeDriver(String browserType,boolean isHeadlessMode);
+import org.openqa.selenium.WebElement;
 
-    public void openURL(String url);
-    public void closeCurrentTabWindow();
-    public void closeBrowser();
-    public String getPageTitle();
-    public WebElement findElement(String locatorType, String locator);
-    public List<WebElement> findElements(String locatorType, String locator);
-    public boolean isElementPresent(String locatorType,String locator);
-    public boolean waitUntilElementAppear(String locatorType,String locator);
-    public boolean waitUntilElementDisAppear(String locatorType,String locator);
-    public void click(String locatorType,String locator);
-    public void type(String locatorType,String locator,String textToEnter);
-    public void switchToOpenedTabWindow(int tabWindowIndex);
-    public void openNewTabWindowNSwitch(String tabWindowType);
-    public void switchToParenTabWindow();
-    public void switchFrame(String locatorType,String locator);
-    public String getWebElementText(String locatorType,String locator);
-    public String getWebElementAttribute(String locatorType,String locator,String attributeName);
-    public void applyExplicitWait(String locatorType,String locator,String state);
-    public WebElement applyFluentWait(String locatorType,String locator);
+public interface IActionUI {
+
+	public void initializeDriver(String browserType, boolean isHeadlessMode);
+
+	public void closeCurrentTabWindow();
+
+	public void closeBrowser();
+
+	public void openURL(String url);
+
+	public void click(String locatorType,String locatorValue);
+
+	public void type(String locatorType,String locatorValue, String textToEnter);
+
+	public void waitForElement(int seconds);
+
+	public boolean isElementDisplayedOrEnabledOrSelected(String locatorType,String locatorValue, String state);
+
+	public boolean isElementPresent(String locatorType,String locatorValue);
+
+	public String getAttributeValue(String locatorType,String locatorValue, String attributeName);
+
+	public String getText(String locatorType,String locatorValue);
+
+	public String getURL();
+
+	public String takeScreenshot(String screenshotPath);
+
+	public String takeScreenshot(String locatorType,String locatorValue, String screenshotPath);
+
+	public void jsClick(String locatorType,String locatorValue);
+
+	public WebElement findElement(String locatorType, String locatorValue);
+
+	public List<WebElement> findElements(String locatorType,String locatorValue);
+
+	public void waitUntill(String locatorType,final String locatorValue, final String conditionName);
+
+	public void waitForPageLoad(int timeInSeconds);
+
+	public void scrollToElement(String locatorType,String locatorValue, String scrollType);
+
+	public boolean waitUntillElementAppear(String locatorType,String locatorValue);
+
+	public boolean waitUntillElementDisappear(String locatorType,String locatorValue);
+
+	public void navigateTo(String direction);
+
+	public void switchToOpenedTabWindow(int windowTabIndex);
+
+	public void createNewWindowTabSwitch(String type);
+
+	public void hoverElement(String locatorType,String locatorValue);
+
+	public void rightClickElement(String locatorType,String locatorValue);
+
+	public void doubleClickElement(String locatorType,String locatorValue);
+
+	public String getPageTitle();
+
+	public void switchToParenTabWindow();
+
+	public void switchFrame(String locatorType, String locator);
+
 }

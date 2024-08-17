@@ -1,6 +1,6 @@
 package base;
 
-import config.EnvConfig;
+import config.ConfigProp;
 import core.IActionUI;
 import core.ToolFactory;
 
@@ -8,11 +8,11 @@ public class BaseClass {
     private static IActionUI globalDriver;
 
     public static void initDriver(){
-        globalDriver= ToolFactory.getToolInstance(EnvConfig.TOOL_NAME);
-        globalDriver.initializeDriver(EnvConfig.BROWSER_TYPE,EnvConfig.IS_HEADLESS_MODE);
+        globalDriver= ToolFactory.getToolInstance(ConfigProp.TOOL_NAME);
+        globalDriver.initializeDriver(ConfigProp.BROWSER_TYPE,ConfigProp.IS_HEADLESS_MODE);
     }
     public static void launchBrowser(){
-        globalDriver.openURL(EnvConfig.APP_URL);
+        globalDriver.openURL(ConfigProp.APP_URL);
     }
     public static void closeSession(){
         globalDriver.closeCurrentTabWindow();
