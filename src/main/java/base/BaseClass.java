@@ -6,6 +6,7 @@ import core.ToolFactory;
 
 public class BaseClass {
     private static IActionUI globalDriver;
+    private static int maxWaitTime=120;
 
     public static void initDriver(){
         globalDriver= ToolFactory.getToolInstance(ConfigProp.TOOL_NAME);
@@ -25,11 +26,11 @@ public class BaseClass {
     }
 
     public static  void click(String locatorType,String locator){
-        globalDriver.click(locatorType,locator);
+        globalDriver.click(locatorType,locator,maxWaitTime);
     }
 
     public static void enterText(String locatorType,String locator,String textToEnter){
-        globalDriver.type(locatorType,locator,textToEnter);
+        globalDriver.type(locatorType,locator,textToEnter,maxWaitTime);
     }
 
     public static String getPageTitle(){

@@ -3,14 +3,14 @@ package appTest;
 import org.testng.annotations.Test;
 
 import base.BaseTest;
-import pageInstanceFactory.PageInstanceFactory;
 import pages.PageTitles;
+import pagesObject.PageObjectsManager;
 
 public class ValidateHomePageLinksDisplayed extends BaseTest{
 	
 	@Test
 	public void testHomeLinks() {
-		PageInstanceFactory
+		PageObjectsManager
 					.goToHomePage(PageTitles.HOME_PAGE_TITLE)
 					.verifyHomePageLinksDisplayed("leftmenu~About Us")
 					.verifyHomePageLinksDisplayed("leftmenu~Services")

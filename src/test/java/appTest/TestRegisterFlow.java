@@ -3,18 +3,18 @@ package appTest;
 import org.testng.annotations.Test;
 
 import base.BaseTest;
-import pageInstanceFactory.PageInstanceFactory;
 import pages.PageTitles;
+import pagesObject.PageObjectsManager;
 
 public class TestRegisterFlow extends BaseTest{
 	
 	@Test
 	public void test() {
-		PageInstanceFactory
+		PageObjectsManager
 					.goToHomePage(PageTitles.HOME_PAGE_TITLE)
 					.verifyHomePageLinksDisplayed("Register")
 					.clickHomePageLink("Register");
-		PageInstanceFactory
+		PageObjectsManager
 					.goToRegisterPage(PageTitles.REGISTER_PAGE_TITLE)
 					.registerCustomer("");
 	}
