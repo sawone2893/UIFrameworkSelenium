@@ -15,10 +15,9 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<maven.compiler.source>1.8</maven.compiler.source>
-		<maven.compiler.target>1.8</maven.compiler.target>
-		<selenium.version>4.23.0</selenium.version>
-		<commonio.version>2.6</commonio.version>
+		<maven.compiler.source>17</maven.compiler.source>
+		<maven.compiler.target>17</maven.compiler.target>
+		<selAutoCore.version>0.0.1</selAutoCore.version>
 		<testng.version>7.10.2</testng.version>
 		<log4jcore.version>2.16.0</log4jcore.version>
 		<log4jweb.version>2.16.0</log4jweb.version>
@@ -29,9 +28,9 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>io.github.sawone2893</groupId>
+			<groupId>io.github.shabryn2893</groupId>
 			<artifactId>selAutoCore</artifactId>
-			<version>1.0.0</version>
+			<version>${selAutoCore.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.testng</groupId>

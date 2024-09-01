@@ -1,15 +1,15 @@
 package base;
 
 import config.ConfigProp;
-import core.IActionUI;
-import core.ToolFactory;
+import io.github.shabryn2893.selAutoCore.uiCore.IActionUI;
+import io.github.shabryn2893.selAutoCore.uiCore.UIToolFactory;
 
 public class BaseClass {
     private static IActionUI globalDriver;
-    private static int maxWaitTime=120;
+    private static int maxWaitTime=ConfigProp.MAX_WAIT_TIME;
 
     public static void initDriver(){
-        globalDriver= ToolFactory.getToolInstance(ConfigProp.TOOL_NAME);
+        globalDriver= UIToolFactory.getToolInstance(ConfigProp.TOOL_NAME);
         globalDriver.initializeDriver(ConfigProp.BROWSER_TYPE,ConfigProp.IS_HEADLESS_MODE);
     }
     public static void launchBrowser(){
