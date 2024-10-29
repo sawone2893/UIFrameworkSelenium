@@ -12,9 +12,10 @@ public class ExtentReportManager {
     private static ExtentSparkReporter sparkReporter;
     private static ThreadLocal<ExtentTest> test = new ThreadLocal<>();
 
+    private ExtentReportManager(){}
     public static ExtentReports getInstance() {
         if (extent == null) {
-            sparkReporter = new ExtentSparkReporter(System.getProperty("user.dir")+ConfigProp.REPORT_PATH+"executionReport.html");
+            sparkReporter = new ExtentSparkReporter(ConfigProp.REPORT_PATH+"executionReport.html");
             sparkReporter.config().setTheme(Theme.STANDARD);
             sparkReporter.config().setDocumentTitle("Automation Execution Report");
             sparkReporter.config().setReportName("Regression Report");

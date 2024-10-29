@@ -4,7 +4,7 @@ import org.testng.annotations.Test;
 
 import base.BaseTest;
 import pages.PageTitles;
-import pagesObject.PageObjectsManager;
+import pagesobject.PageObjectsManager;
 
 public class TestRegisterFlow extends BaseTest{
 	

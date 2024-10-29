@@ -1,16 +1,21 @@
 package base;
 
 import config.ConfigProp;
-import io.github.shabryn2893.selAutoCore.uiCore.IActionUI;
-import io.github.shabryn2893.selAutoCore.uiCore.UIToolFactory;
+import io.github.shabryn2893.uicore.IActionUI;
+import io.github.shabryn2893.uidriverfactory.DriverFactory;
+import io.github.shabryn2893.uidriverfactory.DriverManager;
 
 public class BaseClass {
     private static IActionUI globalDriver;
     private static int maxWaitTime=ConfigProp.MAX_WAIT_TIME;
 
-    public static void initDriver(){
-        globalDriver= UIToolFactory.getToolInstance(ConfigProp.TOOL_NAME);
-        globalDriver.initializeDriver(ConfigProp.BROWSER_TYPE,ConfigProp.IS_HEADLESS_MODE);
+    private BaseClass() {
+    	throw new UnsupportedOperationException("BaseClass class should not be instantiated");
+    }
+    
+    public static void initDriver(){	
+    	DriverManager driverManager=DriverFactory.getDriver(ConfigProp.BROWSER_TYPE, ConfigProp.TOOL_NAME, ConfigProp.IS_HEADLESS_MODE);
+    	globalDriver=driverManager.createBrowser();
     }
     public static void launchBrowser(){
         globalDriver.openURL(ConfigProp.APP_URL);

@@ -1,16 +1,19 @@
 package pages;
 
 import base.BaseClass;
+import io.github.shabryn2893.utils.LoggerUtils;
 import locators.Locators;
+import org.slf4j.Logger;
 import org.testng.Assert;
 import utilities.LocatorGenerator;
 
 public class HomePage {
 
+	private static final Logger logger=LoggerUtils.getLogger(HomePage.class);
 	private static HomePage homePage = null;
 
 	private HomePage(String pageTitle) {
-		System.out.println("Navigating to HomePage...");
+		logger.info("Navigating to HomePage...");
 		Assert.assertEquals(BaseClass.getPageTitle(), pageTitle);
 	}
 
@@ -41,11 +44,11 @@ public class HomePage {
 	
 	public HomePage verifyHomePageLinksDisplayed(String linkName) {
 		if (!linkName.contains("~")) {
-			System.out.println("Validating Home Page Link: "+linkName);
+			logger.info("Validating Home Page Link: {}",linkName);
 			Assert.assertTrue(BaseClass.verifyVisibility("LINKTEXT", linkName))
 			;
 		}else {
-			System.out.println("Validating Home Page Link: "+linkName.split("~")[1]);
+			logger.info("Validating Home Page Link: {}",linkName);
 			Assert.assertTrue(BaseClass.verifyVisibility("XPATH", LocatorGenerator.generateLocator(Locators.ANCHOR_LINK_UNDER_LI_TAG, linkName)));
 		}
 		

@@ -10,20 +10,14 @@
 	<version>0.0.1-SNAPSHOT</version>
 
 	<name>UIFrameworkSelenium</name>
-	<!-- FIXME change it to the project's website -->
 	<url>http://www.example.com</url>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<maven.compiler.source>17</maven.compiler.source>
-		<maven.compiler.target>17</maven.compiler.target>
-		<selAutoCore.version>0.0.1</selAutoCore.version>
+		<maven.compiler.source>21</maven.compiler.source>
+		<maven.compiler.target>21</maven.compiler.target>
+		<selAutoCore.version>0.0.4</selAutoCore.version>
 		<testng.version>7.10.2</testng.version>
-		<log4jcore.version>2.16.0</log4jcore.version>
-		<log4jweb.version>2.16.0</log4jweb.version>
-		<poi.version>3.9</poi.version>
-		<poiooxml.version>3.9</poiooxml.version>
-		<xmlbeans.version>2.6.0</xmlbeans.version>
 	</properties>
 
 	<dependencies>
@@ -53,41 +47,6 @@
 		</dependency>
 
 		<!--Extent Reports Jars End -->
-
-		<!-- Logging Framework Jars Start -->
-		<dependency>
-			<groupId>org.apache.logging.log4j</groupId>
-			<artifactId>log4j-core</artifactId>
-			<version>${log4jcore.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.logging.log4j</groupId>
-			<artifactId>log4j-web</artifactId>
-			<version>${log4jweb.version}</version>
-		</dependency>
-		<!-- Logging Framework Jars End -->
-
-		<!-- Excel Handling Jars Start -->
-
-		<dependency>
-			<groupId>org.apache.poi</groupId>
-			<artifactId>poi</artifactId>
-			<version>${poi.version}</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.apache.poi</groupId>
-			<artifactId>poi-ooxml</artifactId>
-			<version>${poiooxml.version}</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.apache.xmlbeans</groupId>
-			<artifactId>xmlbeans</artifactId>
-			<version>${xmlbeans.version}</version>
-		</dependency>
-
-		<!-- Excel Handling Jars End -->
 	</dependencies>
 
 	<build>

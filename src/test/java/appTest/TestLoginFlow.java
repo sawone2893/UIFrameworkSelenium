@@ -3,8 +3,9 @@ package appTest;
 import org.testng.annotations.Test;
 
 import base.BaseTest;
+import config.ConfigProp;
 import pages.PageTitles;
-import pagesObject.PageObjectsManager;
+import pagesobject.PageObjectsManager;
 
 public class TestLoginFlow extends BaseTest{
 
@@ -12,7 +13,7 @@ public class TestLoginFlow extends BaseTest{
 	public void test() {
 		PageObjectsManager
 					.goToHomePage(PageTitles.HOME_PAGE_TITLE)
-					.customerLogin("Shab", "283");
+					.customerLogin(ConfigProp.USER_NAME, ConfigProp.PASSWORD);
 	}
 
 }

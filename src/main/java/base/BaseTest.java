@@ -19,11 +19,11 @@ public class BaseTest {
 
     @AfterClass
     public void closeSession(){
-        //BaseClass.closeSession();
+        BaseClass.closeSession();
     }
 
     @AfterSuite
     public void tearDown(){
-        //BaseClass.closeBrowser();
+        BaseClass.closeBrowser();
     }
 }

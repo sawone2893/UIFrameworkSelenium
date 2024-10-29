@@ -1,11 +1,13 @@
 package utilities;
 
 public class LocatorGenerator {
+	
+	private LocatorGenerator() {}
 
     public static String generateLocator(String locatorIdentifier,String params){
         String xpath=locatorIdentifier;
         if(params.contains("~")){
-            String values[]=params.split("~");
+            String []values=params.split("~");
             for (int i=0;i< values.length;i++){
                 String newXpath=xpath.replace("#"+i+"#",values[i]);
                 xpath=newXpath;

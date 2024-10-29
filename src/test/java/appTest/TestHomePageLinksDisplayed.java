@@ -4,9 +4,9 @@ import org.testng.annotations.Test;
 
 import base.BaseTest;
 import pages.PageTitles;
-import pagesObject.PageObjectsManager;
+import pagesobject.PageObjectsManager;
 
-public class ValidateHomePageLinksDisplayed extends BaseTest{
+public class TestHomePageLinksDisplayed extends BaseTest{
 	
 	@Test
 	public void testHomeLinks() {

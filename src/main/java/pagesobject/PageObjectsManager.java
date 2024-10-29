@@ -1,10 +1,13 @@
-package pagesObject;
+package pagesobject;
 
 import pages.AccountsOverviewPage;
 import pages.HomePage;
 import pages.RegisterPage;
 
 public class PageObjectsManager {
+	
+	private PageObjectsManager() {}
+	
 	public static HomePage goToHomePage(String pageTitle) {
 		return HomePage.getInstance(pageTitle);
 	}
