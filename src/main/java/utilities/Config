@@ -1,0 +1,34 @@
+package utils;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.util.Properties;
+
+public class Config {
+    private static final Properties props = new Properties();
+
+    static {
+        String env = System.getProperty("env", "qa"); // default env
+        String filePath = System.getProperty("user.dir")+"\\resources\\envConfig\\"+"config-" + env + ".properties";
+        System.out.println("ENV File: "+filePath);
+        try{
+        	File file=new File(filePath);
+			FileInputStream fis= new FileInputStream(file);
+            props.load(fis);
+        } catch (Exception e) {
+            throw new RuntimeException("Failed to load: " + filePath, e);
+        }
+    }
+
+    public static String get(String key) {
+        return props.getProperty(key);
+    }
+
+    public static String getOrDefault(String key, String def) {
+        return props.getProperty(key, def);
+    }
+
+    public static boolean getBool(String key) {
+        return Boolean.parseBoolean(props.getProperty(key, "false"));
+    }
+}
