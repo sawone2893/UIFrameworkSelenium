@@ -1,4 +1,4 @@
-package utils;
+package utilities;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -22,11 +22,11 @@ public class ExcelManager {
 		Map<String, String> testCaseData = new HashMap<>();
 		try {
 			String filePath = System.getProperty("user.dir")
-					+ PropertyFileManger.getPropertyValue("TESTDATA_FILE_LOCATION");
+					+ Config.get("TESTDATA_FILE_LOCATION");
 			file = new File(filePath);
 			fis = new FileInputStream(file);
 			workbook = new XSSFWorkbook(fis);
-			sheet = workbook.getSheet(PropertyFileManger.getPropertyValue("TESTDATA_FILE_SHEET_NAME"));
+			sheet = workbook.getSheet(Config.get("TESTDATA_FILE_SHEET_NAME"));
 			int rowCount = sheet.getLastRowNum() - sheet.getFirstRowNum();
 			XSSFRow headerRow = sheet.getRow(0);
 			int colCount = headerRow.getPhysicalNumberOfCells();

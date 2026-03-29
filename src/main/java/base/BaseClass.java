@@ -13,8 +13,8 @@ public class BaseClass {
     	throw new UnsupportedOperationException("BaseClass class should not be instantiated");
     }
     
-    public static void initDriver(){	
-    	DriverManager driverManager=DriverFactory.getDriver(ConfigProp.BROWSER_TYPE, ConfigProp.TOOL_NAME, ConfigProp.IS_HEADLESS_MODE);
+    public static void initDriver(String browserType,String toolName,boolean isHeadlessMode){	
+    	DriverManager driverManager=DriverFactory.getDriver(browserType, toolName, isHeadlessMode);
     	globalDriver=driverManager.createBrowser();
     }
     public static void launchBrowser(){

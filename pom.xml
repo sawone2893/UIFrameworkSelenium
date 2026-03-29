@@ -16,15 +16,18 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>21</maven.compiler.source>
 		<maven.compiler.target>21</maven.compiler.target>
-		<selAutoCore.version>0.0.4</selAutoCore.version>
+		<autoNxt.version>0.0.1</autoNxt.version>
 		<testng.version>7.10.2</testng.version>
+		<env>qa</env>
+		<browser>chrome</browser>
+		<suiteXml>testng.xml</suiteXml>
 	</properties>
 
 	<dependencies>
 		<dependency>
 			<groupId>io.github.shabryn2893</groupId>
-			<artifactId>selAutoCore</artifactId>
-			<version>${selAutoCore.version}</version>
+			<artifactId>autoNxt</artifactId>
+			<version>${autoNxt.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.testng</groupId>
@@ -72,6 +75,11 @@
 				<plugin>
 					<artifactId>maven-surefire-plugin</artifactId>
 					<version>2.22.1</version>
+					<configuration>
+						<suiteXmlFiles>
+							<suiteXmlFile>suiteXml}</suiteXmlFile>
+						</suiteXmlFiles>
+					</configuration>
 				</plugin>
 				<plugin>
 					<artifactId>maven-jar-plugin</artifactId>
